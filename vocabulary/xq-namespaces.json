@@ -1,0 +1,18 @@
+{
+  "registry_version": "0.1.0",
+  "status": "experimental",
+  "namespaces": [
+    {
+      "prefix": "xq:",
+      "scope": "Crosscue Event Model Core vocabulary",
+      "status": "allocated"
+    },
+    {
+      "prefix": "xq.mob:",
+      "scope": "Crosscue Event Model Mobility Profile 0.1",
+      "status": "allocated"
+    }
+  ],
+  "allocation_policy": "An xq.<profile>: namespace is allocated when the corresponding official Crosscue Event Model profile is published. Unlisted xq.*: prefixes are not official profile namespaces.",
+  "third_party_guidance": "Third-party semantic identifiers should use a non-xq qualified namespace they control, for example org.example:term. Implementations claiming Crosscue vocabulary conformance must not assign private or conflicting meanings to registered xq: or allocated xq.<profile>: terms."
+}

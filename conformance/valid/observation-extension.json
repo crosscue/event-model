@@ -1,0 +1,32 @@
+{
+  "xq_version": "0.1",
+  "id": "evt:extension-rf-001",
+  "event_time": "2026-08-30T11:12:03.182Z",
+  "observed_time": "2026-08-30T11:12:03.250Z",
+  "source": "synthetic-rf-sensor",
+  "modality": "org.example:rf",
+  "class": "observation",
+  "subject": "emitter:unknown-17",
+  "feature": "org.example:signal",
+  "action": "org.example:observed",
+  "state": "org.example:active",
+  "polarity": 0,
+  "magnitude": -71.3,
+  "unit": "dBm",
+  "location": {
+    "lat": 51.234,
+    "lon": -1.103
+  },
+  "provenance": {
+    "producer": "example-rf-normalizer",
+    "producer_version": "0.1.0",
+    "source_records": [
+      "synthetic:rf:record:001"
+    ]
+  },
+  "context": {
+    "frequency_hz": 433920000,
+    "bandwidth_hz": 25000,
+    "bearing_deg": 137.2
+  }
+}

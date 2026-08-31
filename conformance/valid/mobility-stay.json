@@ -1,0 +1,42 @@
+{
+  "xq_version": "0.1",
+  "id": "evt:fix-stay",
+  "event_time": "2026-08-30T08:00:00Z",
+  "source": "synthetic-mobility",
+  "modality": "xq:mobility",
+  "class": "transition",
+  "profile": "xq.mob:profile-0.1",
+  "subject": "device:fixture-a",
+  "feature": "xq:presence",
+  "action": "xq.mob:stay",
+  "state": "xq:present",
+  "polarity": 0,
+  "location": {
+    "lat": 51.5,
+    "lon": -0.12
+  },
+  "provenance": {
+    "producer": "crosscue-mobility-reference",
+    "producer_version": "0.1.0",
+    "method": "algorithmic",
+    "parameters": {
+      "geohash_precision": 8,
+      "move_radius_m": 100,
+      "dwell_threshold_s": 900,
+      "gap_threshold_s": 7200,
+      "max_speed_mps": 50,
+      "max_jump_m": 50000,
+      "confirm_moves": true,
+      "confirm_window_s": 900,
+      "walk_max_speed_mps": 6,
+      "walk_max_jump_m": 8000
+    }
+  },
+  "context": {
+    "source_event": "STAY",
+    "segment_id": "device:fixture-a:s1"
+  },
+  "end_time": "2026-08-30T08:10:00Z",
+  "magnitude": 600,
+  "unit": "s"
+}

@@ -1,0 +1,27 @@
+{
+  "xq_version": "0.1",
+  "id": "evt:assessment-001",
+  "event_time": "2026-08-30T11:30:00Z",
+  "observed_time": "2026-08-30T11:35:00Z",
+  "source": "example-analyst-workflow",
+  "modality": "xq:multimodal",
+  "class": "assessment",
+  "subject": "track:A",
+  "object": "entity:123",
+  "feature": "org.example:identity",
+  "action": "org.example:associated",
+  "state": "org.example:probable",
+  "polarity": 1,
+  "confidence": 0.78,
+  "provenance": {
+    "producer": "example-identity-correlator",
+    "producer_version": "3.2.1",
+    "method": "hybrid",
+    "parents": [
+      "evt:aa",
+      "evt:bb",
+      "evt:cc"
+    ],
+    "org.example:reviewed_by": "role:analyst"
+  }
+}

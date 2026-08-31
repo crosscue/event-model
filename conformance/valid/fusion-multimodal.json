@@ -1,0 +1,28 @@
+{
+  "xq_version": "0.1",
+  "id": "evt:fusion-001",
+  "event_time": "2026-08-30T10:11:00Z",
+  "source": "example-multimodal-cluster",
+  "modality": "xq:multimodal",
+  "class": "fusion",
+  "feature": "org.example:activity",
+  "action": "org.example:cluster",
+  "state": "org.example:anomalous",
+  "polarity": 0,
+  "confidence": 0.84,
+  "provenance": {
+    "producer": "example-multimodal-cluster",
+    "producer_version": "0.4.0",
+    "method": "algorithmic",
+    "parents": [
+      "evt:rf1",
+      "evt:mob1",
+      "evt:ais1",
+      "evt:img1"
+    ],
+    "org.example:model_hash": "sha256:synthetic"
+  },
+  "context": {
+    "window_s": 600
+  }
+}

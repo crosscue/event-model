@@ -1,0 +1,40 @@
+{
+  "version": "0.1.0",
+  "valid": [
+    "valid/assessment.json",
+    "valid/collection-unique-ids.json",
+    "valid/fusion-multimodal.json",
+    "valid/interval-generic.json",
+    "valid/mobility-discontinuity.json",
+    "valid/mobility-dwell.json",
+    "valid/mobility-end.json",
+    "valid/mobility-enter.json",
+    "valid/mobility-gap.json",
+    "valid/mobility-leave.json",
+    "valid/mobility-start.json",
+    "valid/mobility-stay.json",
+    "valid/observation-extension.json",
+    "valid/relational-derived.json",
+    "valid/semantic-adsb.json",
+    "valid/semantic-ais.json",
+    "valid/semantic-imagery.json",
+    "valid/semantic-mobility.json",
+    "valid/semantic-rf.json"
+  ],
+  "invalid": [
+    "invalid/bad-confidence.json",
+    "invalid/bad-latitude.json",
+    "invalid/bad-mobility-enter-polarity.json",
+    "invalid/bad-polarity.json",
+    "invalid/collection-duplicate-ids.json",
+    "invalid/end-before-start.json",
+    "invalid/magnitude-without-unit.json",
+    "invalid/missing-required-feature.json",
+    "invalid/mobility-dwell-below-threshold.json",
+    "invalid/mobility-missing-eventizer-parameters.json",
+    "invalid/mobility-stay-above-threshold.json",
+    "invalid/non-finite-number.json",
+    "invalid/object-without-subject.json",
+    "invalid/unqualified-feature.json"
+  ]
+}

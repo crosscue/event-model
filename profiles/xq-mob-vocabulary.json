@@ -1,0 +1,59 @@
+{
+  "profile": "xq.mob:profile-0.1",
+  "registry_version": "0.1.0",
+  "status": "experimental",
+  "terms": [
+    {
+      "id": "xq.mob:stay",
+      "kind": "action",
+      "definition": "A stable presence interval that ends before the configured dwell threshold is reached.",
+      "status": "experimental",
+      "allowed_polarities": [
+        0
+      ],
+      "typical_units": [
+        "s"
+      ],
+      "do_not_confuse_with": [
+        "xq.mob:dwell"
+      ]
+    },
+    {
+      "id": "xq.mob:dwell",
+      "kind": "action",
+      "definition": "A stable presence interval whose duration is greater than or equal to the configured dwell threshold.",
+      "status": "experimental",
+      "allowed_polarities": [
+        0
+      ],
+      "typical_units": [
+        "s"
+      ],
+      "do_not_confuse_with": [
+        "xq.mob:stay"
+      ]
+    }
+  ],
+  "compositions": [
+    {
+      "id": "xq.mob:presence.stay",
+      "definition": "Stable mobility presence shorter than the configured dwell threshold.",
+      "feature": "xq:presence",
+      "action": "xq.mob:stay",
+      "required_state": "xq:present",
+      "required_polarity": 0,
+      "required_unit": "s",
+      "status": "experimental"
+    },
+    {
+      "id": "xq.mob:presence.dwell",
+      "definition": "Stable mobility presence meeting or exceeding the configured dwell threshold.",
+      "feature": "xq:presence",
+      "action": "xq.mob:dwell",
+      "required_state": "xq:present",
+      "required_polarity": 0,
+      "required_unit": "s",
+      "status": "experimental"
+    }
+  ]
+}

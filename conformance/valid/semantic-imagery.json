@@ -1,0 +1,23 @@
+{
+  "xq_version": "0.1",
+  "id": "evt:example-imagery-presence-001",
+  "event_time": "2026-08-30T09:15:00Z",
+  "observed_time": "2026-08-30T10:42:00Z",
+  "source": "synthetic-imagery-product",
+  "modality": "xq:imagery",
+  "class": "observation",
+  "subject": "object:vehicle-17",
+  "feature": "xq:presence",
+  "action": "xq:observed",
+  "state": "xq:present",
+  "polarity": 0,
+  "location": {
+    "lat": 34.123,
+    "lon": 36.456
+  },
+  "confidence": 0.91,
+  "context": {
+    "classification": "vehicle",
+    "analysis_method": "synthetic_example"
+  }
+}

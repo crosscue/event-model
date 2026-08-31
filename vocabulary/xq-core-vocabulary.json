@@ -1,0 +1,430 @@
+{
+  "xq_version": "0.1",
+  "registry_version": "0.1.0",
+  "status": "experimental",
+  "semantic_identifier_syntax": "<namespace>:<term>; lowercase ASCII; namespace may contain dots or hyphens",
+  "terms": [
+    {
+      "id": "xq:ads-b",
+      "kind": "modality",
+      "definition": "Automatic Dependent Surveillance-Broadcast (ADS-B) aircraft reports and observations.",
+      "status": "experimental",
+      "examples": [
+        "ADS-B position, altitude and velocity observations"
+      ],
+      "do_not_confuse_with": [
+        "a future xq.adsb: profile namespace, which is not allocated by Core 0.1"
+      ]
+    },
+    {
+      "id": "xq:ais",
+      "kind": "modality",
+      "definition": "Automatic Identification System (AIS) vessel reports and observations.",
+      "status": "experimental",
+      "examples": [
+        "AIS Class A/B dynamic reports"
+      ],
+      "do_not_confuse_with": [
+        "a future xq.ais: profile namespace, which is not allocated by Core 0.1"
+      ]
+    },
+    {
+      "id": "xq:imagery",
+      "kind": "modality",
+      "definition": "Events derived from electro-optical, infrared, SAR, or other imagery observations and analysis.",
+      "status": "experimental",
+      "examples": [
+        "object presence detected in imagery"
+      ],
+      "do_not_confuse_with": [
+        "a future imagery profile namespace, which is not allocated by Core 0.1"
+      ]
+    },
+    {
+      "id": "xq:mobility",
+      "kind": "modality",
+      "definition": "Geospatial movement or presence observations associated with a tracked or pseudonymous entity.",
+      "status": "experimental",
+      "examples": [
+        "mobile-device mobility observations",
+        "vehicle mobility observations"
+      ],
+      "do_not_confuse_with": [
+        "event class transition or derived"
+      ]
+    },
+    {
+      "id": "xq:multimodal",
+      "kind": "modality",
+      "definition": "An event whose evidence or analytical context spans more than one source modality and for which no single source modality is adequate.",
+      "status": "experimental",
+      "examples": [
+        "cross-sensor fusion result",
+        "cross-modal assessment"
+      ],
+      "do_not_confuse_with": [
+        "class fusion"
+      ]
+    },
+    {
+      "id": "xq:rf",
+      "kind": "modality",
+      "definition": "Radio-frequency sensing, detection and derived RF observations.",
+      "status": "experimental",
+      "examples": [
+        "signal detections",
+        "RF energy observations"
+      ],
+      "do_not_confuse_with": [
+        "a future xq.rf: profile namespace, which is not allocated by Core 0.1"
+      ]
+    },
+    {
+      "id": "xq:altitude",
+      "kind": "feature",
+      "definition": "The vertical position or altitude of a subject under the applicable source semantics.",
+      "status": "experimental",
+      "examples": [
+        "ADS-B reported altitude",
+        "radar-derived altitude"
+      ],
+      "allowed_polarities": [
+        -1,
+        0,
+        1
+      ]
+    },
+    {
+      "id": "xq:observation",
+      "kind": "feature",
+      "definition": "The availability or continuity of observation of a subject or phenomenon.",
+      "status": "experimental",
+      "examples": [
+        "observation gap"
+      ],
+      "allowed_polarities": [
+        -1,
+        0,
+        1
+      ]
+    },
+    {
+      "id": "xq:position",
+      "kind": "feature",
+      "definition": "The spatial position of a subject or observed phenomenon.",
+      "status": "experimental",
+      "examples": [
+        "AIS vessel position",
+        "ADS-B aircraft position",
+        "mobility observation position"
+      ],
+      "allowed_polarities": [
+        0
+      ]
+    },
+    {
+      "id": "xq:presence",
+      "kind": "feature",
+      "definition": "Whether a subject is considered present in a spatial or logical region or state of occupancy.",
+      "status": "experimental",
+      "examples": [
+        "enter",
+        "leave",
+        "stable presence"
+      ],
+      "allowed_polarities": [
+        -1,
+        0,
+        1
+      ]
+    },
+    {
+      "id": "xq:signal",
+      "kind": "feature",
+      "definition": "A detected or measured signal or signal-related observable.",
+      "status": "experimental",
+      "examples": [
+        "RF signal observation",
+        "acoustic signal observation"
+      ],
+      "allowed_polarities": [
+        -1,
+        0,
+        1
+      ]
+    },
+    {
+      "id": "xq:track",
+      "kind": "feature",
+      "definition": "The existence or lifecycle of a temporally ordered sequence associated with a subject.",
+      "status": "experimental",
+      "examples": [
+        "track start",
+        "track end"
+      ],
+      "allowed_polarities": [
+        -1,
+        1
+      ]
+    },
+    {
+      "id": "xq:trajectory",
+      "kind": "feature",
+      "definition": "A temporally ordered spatial path or continuity assumption for a subject.",
+      "status": "experimental",
+      "examples": [
+        "trajectory discontinuity"
+      ],
+      "allowed_polarities": [
+        0
+      ]
+    },
+    {
+      "id": "xq:discontinuity",
+      "kind": "action",
+      "definition": "A break in assumed continuity such that adjacent observations should not be interpreted as one continuous trajectory or state sequence.",
+      "status": "experimental",
+      "examples": [
+        "physically implausible spatial jump"
+      ],
+      "allowed_polarities": [
+        0
+      ],
+      "typical_units": [
+        "m"
+      ]
+    },
+    {
+      "id": "xq:end",
+      "kind": "action",
+      "definition": "Termination of the feature represented by the event.",
+      "status": "experimental",
+      "examples": [
+        "track end"
+      ],
+      "allowed_polarities": [
+        -1
+      ]
+    },
+    {
+      "id": "xq:enter",
+      "kind": "action",
+      "definition": "Transition into a state of presence or membership.",
+      "status": "experimental",
+      "examples": [
+        "subject enters a region"
+      ],
+      "allowed_polarities": [
+        1
+      ]
+    },
+    {
+      "id": "xq:gap",
+      "kind": "action",
+      "definition": "A period in which expected or previously available observation continuity is absent.",
+      "status": "experimental",
+      "examples": [
+        "mobility observation gap"
+      ],
+      "allowed_polarities": [
+        0
+      ],
+      "typical_units": [
+        "s"
+      ]
+    },
+    {
+      "id": "xq:leave",
+      "kind": "action",
+      "definition": "Transition out of a state of presence or membership.",
+      "status": "experimental",
+      "examples": [
+        "subject leaves a region"
+      ],
+      "allowed_polarities": [
+        -1
+      ]
+    },
+    {
+      "id": "xq:observed",
+      "kind": "action",
+      "definition": "The feature was observed or measured without asserting a directional transition.",
+      "status": "experimental",
+      "examples": [
+        "position observed",
+        "signal observed",
+        "presence observed"
+      ],
+      "allowed_polarities": [
+        0
+      ]
+    },
+    {
+      "id": "xq:start",
+      "kind": "action",
+      "definition": "Initiation of the feature represented by the event.",
+      "status": "experimental",
+      "examples": [
+        "track start"
+      ],
+      "allowed_polarities": [
+        1
+      ]
+    },
+    {
+      "id": "xq:absent",
+      "kind": "state",
+      "definition": "The subject is considered absent under the applicable profile semantics.",
+      "status": "experimental"
+    },
+    {
+      "id": "xq:active",
+      "kind": "state",
+      "definition": "The represented feature is active or in effect.",
+      "status": "experimental"
+    },
+    {
+      "id": "xq:discontinuous",
+      "kind": "state",
+      "definition": "Continuity is not assumed across the represented boundary.",
+      "status": "experimental"
+    },
+    {
+      "id": "xq:inactive",
+      "kind": "state",
+      "definition": "The represented feature is inactive or no longer in effect.",
+      "status": "experimental"
+    },
+    {
+      "id": "xq:interrupted",
+      "kind": "state",
+      "definition": "An observation or process is temporarily interrupted.",
+      "status": "experimental"
+    },
+    {
+      "id": "xq:present",
+      "kind": "state",
+      "definition": "The subject is considered present under the applicable profile semantics.",
+      "status": "experimental"
+    }
+  ],
+  "compositions": [
+    {
+      "id": "xq:altitude.observed",
+      "definition": "An altitude is observed or reported.",
+      "feature": "xq:altitude",
+      "action": "xq:observed",
+      "required_polarity": 0,
+      "status": "experimental"
+    },
+    {
+      "id": "xq:observation.gap",
+      "definition": "Observation continuity is interrupted for a measurable interval.",
+      "feature": "xq:observation",
+      "action": "xq:gap",
+      "required_state": "xq:interrupted",
+      "required_polarity": 0,
+      "typical_units": [
+        "s"
+      ],
+      "status": "experimental"
+    },
+    {
+      "id": "xq:position.observed",
+      "definition": "A position is observed or reported.",
+      "feature": "xq:position",
+      "action": "xq:observed",
+      "required_polarity": 0,
+      "status": "experimental"
+    },
+    {
+      "id": "xq:presence.enter",
+      "definition": "A subject transitions into presence.",
+      "feature": "xq:presence",
+      "action": "xq:enter",
+      "required_state": "xq:present",
+      "required_polarity": 1,
+      "status": "experimental"
+    },
+    {
+      "id": "xq:presence.leave",
+      "definition": "A subject transitions out of presence.",
+      "feature": "xq:presence",
+      "action": "xq:leave",
+      "required_state": "xq:absent",
+      "required_polarity": -1,
+      "status": "experimental"
+    },
+    {
+      "id": "xq:presence.observed",
+      "definition": "A subject is observed as present without asserting an enter transition.",
+      "feature": "xq:presence",
+      "action": "xq:observed",
+      "required_state": "xq:present",
+      "required_polarity": 0,
+      "status": "experimental"
+    },
+    {
+      "id": "xq:signal.observed",
+      "definition": "A signal-related feature is observed or measured.",
+      "feature": "xq:signal",
+      "action": "xq:observed",
+      "required_polarity": 0,
+      "status": "experimental"
+    },
+    {
+      "id": "xq:track.end",
+      "definition": "A subject track ends.",
+      "feature": "xq:track",
+      "action": "xq:end",
+      "required_state": "xq:inactive",
+      "required_polarity": -1,
+      "status": "experimental"
+    },
+    {
+      "id": "xq:track.start",
+      "definition": "A subject track begins.",
+      "feature": "xq:track",
+      "action": "xq:start",
+      "required_state": "xq:active",
+      "required_polarity": 1,
+      "status": "experimental"
+    },
+    {
+      "id": "xq:trajectory.discontinuity",
+      "definition": "A trajectory continuity boundary is declared.",
+      "feature": "xq:trajectory",
+      "action": "xq:discontinuity",
+      "required_state": "xq:discontinuous",
+      "required_polarity": 0,
+      "typical_units": [
+        "m"
+      ],
+      "status": "experimental"
+    }
+  ],
+  "recommended_units": [
+    "s",
+    "ms",
+    "m",
+    "km",
+    "m/s",
+    "kn",
+    "ft",
+    "Hz",
+    "kHz",
+    "MHz",
+    "GHz",
+    "dBm",
+    "deg",
+    "count",
+    "ratio",
+    "score",
+    "1"
+  ],
+  "polarity": {
+    "-1": "negative / departure / reduction / termination",
+    "0": "neutral / observation / persistence / non-directional state",
+    "1": "positive / arrival / increase / initiation"
+  }
+}

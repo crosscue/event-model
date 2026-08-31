@@ -1,0 +1,25 @@
+{
+  "xq_version": "0.1",
+  "id": "evt:relation-001",
+  "event_time": "2026-08-30T10:05:00Z",
+  "source": "example-proximity-correlator",
+  "modality": "xq:multimodal",
+  "class": "derived",
+  "object": "entity:B",
+  "feature": "org.example:proximity",
+  "action": "org.example:established",
+  "state": "org.example:proximate",
+  "polarity": 1,
+  "magnitude": 37,
+  "unit": "m",
+  "confidence": 0.93,
+  "provenance": {
+    "producer": "example-proximity-correlator",
+    "producer_version": "1.0.0",
+    "method": "algorithmic",
+    "parents": [
+      "evt:A-position",
+      "evt:B-position"
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "xq_version": "0.1",
+  "id": "evt:example-mobility-enter-001",
+  "event_time": "2026-08-30T08:20:00Z",
+  "source": "synthetic-mobility",
+  "modality": "xq:mobility",
+  "class": "transition",
+  "subject": "device:demo-a",
+  "feature": "xq:presence",
+  "action": "xq:enter",
+  "state": "xq:present",
+  "polarity": 1,
+  "location": {
+    "lat": 51.506,
+    "lon": -0.12,
+    "accuracy_m": 18
+  },
+  "context": {
+    "source_family": "mobility"
+  }
+}

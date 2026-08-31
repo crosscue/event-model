@@ -1,0 +1,43 @@
+{
+  "xq_version": "0.1",
+  "id": "evt:mob-enter-001",
+  "event_time": "2026-08-30T08:20:00Z",
+  "source": "synthetic-mobility",
+  "modality": "xq:mobility",
+  "class": "transition",
+  "profile": "xq.mob:profile-0.1",
+  "subject": "device:demo-a",
+  "action": "xq:enter",
+  "state": "xq:present",
+  "polarity": 1,
+  "location": {
+    "lat": 51.506,
+    "lon": -0.12,
+    "accuracy_m": 8
+  },
+  "provenance": {
+    "producer": "crosscue-mobility-reference",
+    "producer_version": "0.1.0",
+    "method": "algorithmic",
+    "parameters": {
+      "geohash_precision": 8,
+      "move_radius_m": 100,
+      "dwell_threshold_s": 900,
+      "gap_threshold_s": 7200,
+      "max_speed_mps": 50,
+      "max_jump_m": 50000,
+      "confirm_moves": true,
+      "confirm_window_s": 900,
+      "walk_max_speed_mps": 6,
+      "walk_max_jump_m": 8000
+    }
+  },
+  "context": {
+    "source_event": "ENTER",
+    "segment_id": "device:demo-a:s1",
+    "from_cell": "gcpuvr29",
+    "to_cell": "gcpvj22s",
+    "distance_m": 667.17,
+    "bearing_deg": 0
+  }
+}

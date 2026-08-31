@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Crosscue Event Model Event Collection 0.1",
+  "description": "Optional envelope for a small collection of Crosscue Event Model Core events.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["xq_version", "type", "events"],
+  "properties": {
+    "xq_version": {"const": "0.1"},
+    "type": {"const": "event_collection"},
+    "generated_at": {"type": "string", "format": "date-time"},
+    "producer": {"type": "string", "minLength": 1},
+    "context": {"type": "object", "additionalProperties": true},
+    "events": {
+      "type": "array",
+      "items": {"$ref": "crosscue-event.schema.json"}
+    }
+  }
+}

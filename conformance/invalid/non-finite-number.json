@@ -1,0 +1,13 @@
+{
+  "xq_version":"0.1",
+  "id":"evt:nan",
+  "event_time":"2026-08-30T00:00:00Z",
+  "source":"example",
+  "modality":"org.example:test",
+  "class":"observation",
+  "feature":"org.example:value",
+  "action":"org.example:observed",
+  "polarity":0,
+  "magnitude":NaN,
+  "unit":"1"
+}

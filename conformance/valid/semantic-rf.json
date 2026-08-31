@@ -1,0 +1,23 @@
+{
+  "xq_version": "0.1",
+  "id": "evt:example-rf-signal-001",
+  "event_time": "2026-08-30T11:12:03.182Z",
+  "observed_time": "2026-08-30T11:12:03.250Z",
+  "source": "synthetic-rf-sensor",
+  "modality": "xq:rf",
+  "class": "observation",
+  "feature": "xq:signal",
+  "action": "xq:observed",
+  "polarity": 0,
+  "magnitude": -71.3,
+  "unit": "dBm",
+  "location": {
+    "lat": 51.234,
+    "lon": -1.103
+  },
+  "context": {
+    "frequency_hz": 433920000,
+    "bandwidth_hz": 25000,
+    "bearing_deg": 137.2
+  }
+}

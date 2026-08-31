@@ -1,0 +1,22 @@
+{
+  "xq_version": "0.1",
+  "id": "evt:example-adsb-altitude-001",
+  "event_time": "2026-08-30T11:08:22Z",
+  "source": "synthetic-adsb-receiver",
+  "modality": "xq:ads-b",
+  "class": "observation",
+  "subject": "icao24:406a3d",
+  "feature": "xq:altitude",
+  "action": "xq:observed",
+  "polarity": 0,
+  "magnitude": 28750,
+  "unit": "ft",
+  "location": {
+    "lat": 51.234,
+    "lon": -1.103
+  },
+  "context": {
+    "altitude_type": "barometric",
+    "ground_speed_kn": 412.0
+  }
+}

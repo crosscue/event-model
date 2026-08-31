@@ -1,0 +1,252 @@
+{
+  "xq_version": "0.1",
+  "type": "event_collection",
+  "generated_at": "2026-08-31T13:30:00Z",
+  "producer": "crosscue-core-examples",
+  "context": {
+    "status": "synthetic",
+    "purpose": "Core and extension examples"
+  },
+  "events": [
+    {
+      "xq_version": "0.1",
+      "id": "evt:mob-start-001",
+      "event_time": "2026-08-30T08:00:00Z",
+      "source": "synthetic-mobility",
+      "modality": "xq:mobility",
+      "class": "transition",
+      "profile": "xq.mob:profile-0.1",
+      "subject": "device:demo-a",
+      "feature": "xq:track",
+      "action": "xq:start",
+      "state": "xq:active",
+      "polarity": 1,
+      "location": {
+        "lat": 51.5,
+        "lon": -0.12,
+        "accuracy_m": 10
+      },
+      "provenance": {
+        "producer": "crosscue-mobility-reference",
+        "producer_version": "0.1.0",
+        "method": "algorithmic",
+        "parameters": {
+          "geohash_precision": 8,
+          "move_radius_m": 100,
+          "dwell_threshold_s": 900,
+          "gap_threshold_s": 7200,
+          "max_speed_mps": 50,
+          "max_jump_m": 50000,
+          "confirm_moves": true,
+          "confirm_window_s": 900,
+          "walk_max_speed_mps": 6,
+          "walk_max_jump_m": 8000
+        }
+      },
+      "context": {
+        "source_event": "START",
+        "segment_id": "device:demo-a:s1"
+      }
+    },
+    {
+      "xq_version": "0.1",
+      "id": "evt:mob-enter-001",
+      "event_time": "2026-08-30T08:20:00Z",
+      "source": "synthetic-mobility",
+      "modality": "xq:mobility",
+      "class": "transition",
+      "profile": "xq.mob:profile-0.1",
+      "subject": "device:demo-a",
+      "feature": "xq:presence",
+      "action": "xq:enter",
+      "state": "xq:present",
+      "polarity": 1,
+      "location": {
+        "lat": 51.506,
+        "lon": -0.12,
+        "accuracy_m": 8
+      },
+      "provenance": {
+        "producer": "crosscue-mobility-reference",
+        "producer_version": "0.1.0",
+        "method": "algorithmic",
+        "parameters": {
+          "geohash_precision": 8,
+          "move_radius_m": 100,
+          "dwell_threshold_s": 900,
+          "gap_threshold_s": 7200,
+          "max_speed_mps": 50,
+          "max_jump_m": 50000,
+          "confirm_moves": true,
+          "confirm_window_s": 900,
+          "walk_max_speed_mps": 6,
+          "walk_max_jump_m": 8000
+        }
+      },
+      "context": {
+        "source_event": "ENTER",
+        "segment_id": "device:demo-a:s1",
+        "from_cell": "gcpuvr29",
+        "to_cell": "gcpvj22s",
+        "distance_m": 667.17,
+        "bearing_deg": 0
+      }
+    },
+    {
+      "xq_version": "0.1",
+      "id": "evt:mob-dwell-001",
+      "event_time": "2026-08-30T08:20:00Z",
+      "end_time": "2026-08-30T08:50:00Z",
+      "source": "synthetic-mobility",
+      "modality": "xq:mobility",
+      "class": "transition",
+      "profile": "xq.mob:profile-0.1",
+      "subject": "device:demo-a",
+      "feature": "xq:presence",
+      "action": "xq.mob:dwell",
+      "state": "xq:present",
+      "polarity": 0,
+      "magnitude": 1800,
+      "unit": "s",
+      "location": {
+        "lat": 51.506,
+        "lon": -0.12,
+        "accuracy_m": 8
+      },
+      "provenance": {
+        "producer": "crosscue-mobility-reference",
+        "producer_version": "0.1.0",
+        "method": "algorithmic",
+        "parameters": {
+          "geohash_precision": 8,
+          "move_radius_m": 100,
+          "dwell_threshold_s": 900,
+          "gap_threshold_s": 7200,
+          "max_speed_mps": 50,
+          "max_jump_m": 50000,
+          "confirm_moves": true,
+          "confirm_window_s": 900,
+          "walk_max_speed_mps": 6,
+          "walk_max_jump_m": 8000
+        }
+      },
+      "context": {
+        "source_event": "DWELL",
+        "segment_id": "device:demo-a:s1"
+      }
+    },
+    {
+      "xq_version": "0.1",
+      "id": "evt:extension-rf-001",
+      "event_time": "2026-08-30T11:12:03.182Z",
+      "observed_time": "2026-08-30T11:12:03.250Z",
+      "source": "synthetic-rf-sensor",
+      "modality": "org.example:rf",
+      "class": "observation",
+      "subject": "emitter:unknown-17",
+      "feature": "org.example:signal",
+      "action": "org.example:observed",
+      "state": "org.example:active",
+      "polarity": 0,
+      "magnitude": -71.3,
+      "unit": "dBm",
+      "location": {
+        "lat": 51.234,
+        "lon": -1.103
+      },
+      "provenance": {
+        "producer": "example-rf-normalizer",
+        "producer_version": "0.1.0",
+        "source_records": [
+          "synthetic:rf:record:001"
+        ]
+      },
+      "context": {
+        "frequency_hz": 433920000,
+        "bandwidth_hz": 25000,
+        "bearing_deg": 137.2
+      }
+    },
+    {
+      "xq_version": "0.1",
+      "id": "evt:relation-001",
+      "event_time": "2026-08-30T10:05:00Z",
+      "source": "example-proximity-correlator",
+      "modality": "xq:multimodal",
+      "class": "derived",
+      "subject": "entity:A",
+      "object": "entity:B",
+      "feature": "org.example:proximity",
+      "action": "org.example:established",
+      "state": "org.example:proximate",
+      "polarity": 1,
+      "magnitude": 37,
+      "unit": "m",
+      "confidence": 0.93,
+      "provenance": {
+        "producer": "example-proximity-correlator",
+        "producer_version": "1.0.0",
+        "method": "algorithmic",
+        "parents": [
+          "evt:A-position",
+          "evt:B-position"
+        ]
+      }
+    },
+    {
+      "xq_version": "0.1",
+      "id": "evt:fusion-001",
+      "event_time": "2026-08-30T10:11:00Z",
+      "source": "example-multimodal-cluster",
+      "modality": "xq:multimodal",
+      "class": "fusion",
+      "feature": "org.example:activity",
+      "action": "org.example:cluster",
+      "state": "org.example:anomalous",
+      "polarity": 0,
+      "confidence": 0.84,
+      "provenance": {
+        "producer": "example-multimodal-cluster",
+        "producer_version": "0.4.0",
+        "method": "algorithmic",
+        "parents": [
+          "evt:rf1",
+          "evt:mob1",
+          "evt:ais1",
+          "evt:img1"
+        ],
+        "org.example:model_hash": "sha256:synthetic"
+      },
+      "context": {
+        "window_s": 600
+      }
+    },
+    {
+      "xq_version": "0.1",
+      "id": "evt:assessment-001",
+      "event_time": "2026-08-30T11:30:00Z",
+      "observed_time": "2026-08-30T11:35:00Z",
+      "source": "example-analyst-workflow",
+      "modality": "xq:multimodal",
+      "class": "assessment",
+      "subject": "track:A",
+      "object": "entity:123",
+      "feature": "org.example:identity",
+      "action": "org.example:associated",
+      "state": "org.example:probable",
+      "polarity": 1,
+      "confidence": 0.78,
+      "provenance": {
+        "producer": "example-identity-correlator",
+        "producer_version": "3.2.1",
+        "method": "hybrid",
+        "parents": [
+          "evt:aa",
+          "evt:bb",
+          "evt:cc"
+        ],
+        "org.example:reviewed_by": "role:analyst"
+      }
+    }
+  ]
+}
