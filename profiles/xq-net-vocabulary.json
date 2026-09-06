@@ -1,0 +1,236 @@
+{
+  "profile": "xq.net:profile-0.1",
+  "registry_version": "0.1.0",
+  "status": "experimental",
+  "namespace_status": "allocated",
+  "terms": [
+    {
+      "id": "xq.net:address_binding",
+      "kind": "feature",
+      "definition": "Evidence associating a network interface or stronger device-scoped referent with a network-layer address.",
+      "status": "experimental",
+      "do_not_confuse_with": [
+        "identity equivalence",
+        "authoritative assignment unless the action/source explicitly supports assignment"
+      ]
+    },
+    {
+      "id": "xq.net:hostname_binding",
+      "kind": "feature",
+      "definition": "Evidence associating a network interface or stronger device-scoped referent with a reported hostname.",
+      "status": "experimental"
+    },
+    {
+      "id": "xq.net:connection",
+      "kind": "feature",
+      "definition": "A normalized observation of network communication or a communication attempt between an originator and a network/transport endpoint.",
+      "status": "experimental",
+      "do_not_confuse_with": [
+        "xq.net:communication_relationship"
+      ]
+    },
+    {
+      "id": "xq.net:communication_relationship",
+      "kind": "feature",
+      "definition": "A higher-order relationship derived from qualifying communication observations between network referents.",
+      "status": "experimental",
+      "do_not_confuse_with": [
+        "xq.net:connection",
+        "relationship establishment in the external world"
+      ]
+    },
+    {
+      "id": "xq.net:dns_query",
+      "kind": "feature",
+      "definition": "A DNS query observation relating a querying referent to a queried domain name.",
+      "status": "experimental"
+    },
+    {
+      "id": "xq.net:name_resolution",
+      "kind": "feature",
+      "definition": "A DNS observation relating a domain name to a resolved network address.",
+      "status": "experimental",
+      "do_not_confuse_with": [
+        "xq.net:name_alias",
+        "permanent identity equivalence"
+      ]
+    },
+    {
+      "id": "xq.net:name_alias",
+      "kind": "feature",
+      "definition": "A DNS observation relating one domain name to another as an alias.",
+      "status": "experimental",
+      "do_not_confuse_with": [
+        "xq.net:name_resolution"
+      ]
+    },
+    {
+      "id": "xq.net:tls_session",
+      "kind": "feature",
+      "definition": "A normalized observation of a TLS session associated with a network/transport endpoint.",
+      "status": "experimental"
+    },
+    {
+      "id": "xq.net:service",
+      "kind": "feature",
+      "definition": "Application-level evidence that a service was observed at an endpoint through the available telemetry.",
+      "status": "experimental",
+      "do_not_confuse_with": [
+        "continuous availability outside the evidence interval",
+        "mere existence of a port/endpoint"
+      ]
+    },
+    {
+      "id": "xq.net:software",
+      "kind": "feature",
+      "definition": "A normalized observation associating a network referent with reported or identified software.",
+      "status": "experimental"
+    },
+    {
+      "id": "xq.net:first_observed",
+      "kind": "action",
+      "definition": "The first evidence supporting the represented assertion within the available telemetry or explicitly defined projection scope.",
+      "status": "experimental",
+      "allowed_polarities": [
+        1
+      ],
+      "do_not_confuse_with": [
+        "established",
+        "entered",
+        "started in the external world"
+      ]
+    },
+    {
+      "id": "xq.net:assigned",
+      "kind": "action",
+      "definition": "The source evidence reports or supports assignment of an address to a network interface or stronger device-scoped referent.",
+      "status": "experimental",
+      "allowed_polarities": [
+        1
+      ]
+    },
+    {
+      "id": "xq.net:reported",
+      "kind": "action",
+      "definition": "A source reported the represented association or value without the profile promoting it to stronger identity semantics.",
+      "status": "experimental",
+      "allowed_polarities": [
+        0
+      ]
+    },
+    {
+      "id": "xq.net:queried",
+      "kind": "action",
+      "definition": "A querying referent issued a query for the represented name.",
+      "status": "experimental",
+      "allowed_polarities": [
+        0
+      ]
+    },
+    {
+      "id": "xq.net:resolved_to",
+      "kind": "action",
+      "definition": "DNS evidence resolved the subject domain to the object network address.",
+      "status": "experimental",
+      "allowed_polarities": [
+        0
+      ]
+    },
+    {
+      "id": "xq.net:alias_of",
+      "kind": "action",
+      "definition": "DNS evidence represented the subject domain as an alias of the object domain.",
+      "status": "experimental",
+      "allowed_polarities": [
+        0
+      ]
+    }
+  ],
+  "compositions": [
+    {
+      "id": "xq.net:connection.observed",
+      "feature": "xq.net:connection",
+      "action": "xq:observed",
+      "required_polarity": 0,
+      "status": "experimental"
+    },
+    {
+      "id": "xq.net:communication_relationship.first_observed",
+      "feature": "xq.net:communication_relationship",
+      "action": "xq.net:first_observed",
+      "required_polarity": 1,
+      "status": "experimental"
+    },
+    {
+      "id": "xq.net:address_binding.first_observed",
+      "feature": "xq.net:address_binding",
+      "action": "xq.net:first_observed",
+      "required_polarity": 1,
+      "status": "experimental"
+    },
+    {
+      "id": "xq.net:address_binding.assigned",
+      "feature": "xq.net:address_binding",
+      "action": "xq.net:assigned",
+      "required_polarity": 1,
+      "status": "experimental"
+    },
+    {
+      "id": "xq.net:hostname_binding.reported",
+      "feature": "xq.net:hostname_binding",
+      "action": "xq.net:reported",
+      "required_polarity": 0,
+      "status": "experimental"
+    },
+    {
+      "id": "xq.net:dns_query.queried",
+      "feature": "xq.net:dns_query",
+      "action": "xq.net:queried",
+      "required_polarity": 0,
+      "status": "experimental"
+    },
+    {
+      "id": "xq.net:name_resolution.resolved_to",
+      "feature": "xq.net:name_resolution",
+      "action": "xq.net:resolved_to",
+      "required_polarity": 0,
+      "status": "experimental"
+    },
+    {
+      "id": "xq.net:name_alias.alias_of",
+      "feature": "xq.net:name_alias",
+      "action": "xq.net:alias_of",
+      "required_polarity": 0,
+      "status": "experimental"
+    },
+    {
+      "id": "xq.net:tls_session.observed",
+      "feature": "xq.net:tls_session",
+      "action": "xq:observed",
+      "required_polarity": 0,
+      "status": "experimental"
+    },
+    {
+      "id": "xq.net:service.observed",
+      "feature": "xq.net:service",
+      "action": "xq:observed",
+      "required_polarity": 0,
+      "status": "experimental"
+    },
+    {
+      "id": "xq.net:software.observed",
+      "feature": "xq.net:software",
+      "action": "xq:observed",
+      "required_polarity": 0,
+      "status": "experimental"
+    },
+    {
+      "id": "xq.net:presence.first_observed",
+      "feature": "xq:presence",
+      "action": "xq.net:first_observed",
+      "required_state": "xq:present",
+      "required_polarity": 1,
+      "status": "experimental"
+    }
+  ]
+}

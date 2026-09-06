@@ -1,5 +1,23 @@
 # Changelog
 
+## 0.1.1 — 2026-09-06
+
+Compatible profile-enabling release. Wire version remains `xq_version = "0.1"`.
+
+Changes:
+
+- publishes Network Profile 0.1 and allocates `xq.net:`;
+- registers the additive coarse Core modality `xq:network`;
+- reuses Core `xq:observed` rather than minting a network-local equivalent;
+- distinguishes `device`, `interface`, `address`, `endpoint`, and `service`; MAC identifiers are interface-scoped by default;
+- makes ARP `first_observed` binding events derived facts rather than normalized observations;
+- clarifies point/interval temporal-purity semantics and prevents DNS response facts from being placed on a point query event;
+- renames the profile feature `xq.net:service_availability` to the weaker `xq.net:service`;
+- permits derived/fusion network events to cite one or multiple observation points;
+- adds Network Profile positive/negative conformance fixtures;
+- refactors reference validation so profile vocabularies are loaded generically and profile-specific semantic validators are dispatched independently;
+- restores all schemas, examples, fixtures, tooling and CI assets referenced by the release README into the packaged release tree.
+
 ## 0.1.0 — 2026-08-31
 
 Initial public release, frozen from `0.1.0-draft.4`.
@@ -23,7 +41,7 @@ Changes:
 - registered coarse Core modality identifiers `xq:ais`, `xq:ads-b`, `xq:rf`, and `xq:imagery` without allocating corresponding profile namespaces;
 - added cross-domain Core features `xq:position`, `xq:altitude`, and `xq:signal`;
 - added Core action `xq:observed` and semantic bindings for observed position, altitude, signal and presence;
-- added non-normative semantic examples for mobility, AIS, ADS-B, RF and imagery;
+- added non-normative semantic examples for mobility/AdTech, AIS, ADS-B, RF and imagery;
 - added a normative rule that source-reported status MUST NOT automatically become Core `state`;
 - documented AIS reported navigational status as evidence that may remain in `context` while eventizer state is independently derived;
 - added the five cross-domain semantic examples to the valid conformance suite;
@@ -37,6 +55,9 @@ Publication hardening after adversarial review.
 
 Changes:
 
+- changed public project name from **XQ Event Model (XQEM)** to **Crosscue Event Model**;
+- retained `xq:` as the technical semantic namespace;
+- renamed wire field `xqem_version` to `xq_version`;
 - renamed schemas/examples/publication artifacts around Crosscue Event Model;
 - applied Apache License 2.0 across specification, schemas, vocabularies, profiles, examples, conformance material and tooling;
 - added `LICENSE`, `CONTRIBUTING.md`, `SECURITY.md`, and `WHAT-THIS-IS-NOT.md`;
@@ -63,7 +84,7 @@ Wire version remains `0.1` because the project is still pre-release and draft.3 
 
 ## 0.1.0-draft.2
 
-Earlier public-draft candidate.
+Earlier public-draft candidate using the XQ Event Model (XQEM) public name and `xq:` namespace.
 
 ## 0.1.0-draft.1
 

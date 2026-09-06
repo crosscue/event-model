@@ -1,0 +1,29 @@
+{
+  "xq_version": "0.1",
+  "id": "evt:net-dhcp-hostname-001",
+  "event_time": "2026-09-06T08:10:00Z",
+  "source": "sensor-01",
+  "modality": "xq:network",
+  "class": "normalized_observation",
+  "profile": "xq.net:profile-0.1",
+  "subject": "interface:mac:00:11:22:33:44:55",
+  "object": "name:host:laptop17",
+  "feature": "xq.net:hostname_binding",
+  "action": "xq.net:reported",
+  "polarity": 0,
+  "provenance": {
+    "producer": "example-network-eventizer",
+    "producer_version": "0.1.0",
+    "method": "algorithmic",
+    "parameters": {
+      "mapping": "hostname_binding-reported"
+    },
+    "source_records": [
+      "example:dhcp:2"
+    ]
+  },
+  "context": {
+    "observation_point": "sensor-01",
+    "protocol": "dhcp"
+  }
+}

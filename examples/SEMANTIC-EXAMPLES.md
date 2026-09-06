@@ -1,8 +1,8 @@
 # Cross-domain semantic examples
 
-These examples are **non-normative Core examples**. They demonstrate how several source domains can use the same Crosscue Event Model fields without claiming conformance to domain profiles that have not yet been published.
+These examples demonstrate how several source domains use the same Crosscue Event Model fields. Mobility and Network have published profiles; AIS, ADS-B, RF and imagery remain non-normative Core-level examples and do not claim profile conformance.
 
-The examples intentionally use only the Core semantic namespace (`xq:`) plus ordinary `context` keys. No `xq.ais:`, `xq.adsb:`, `xq.rf:` or imagery profile namespace is allocated by these examples.
+The AIS, ADS-B, RF and imagery examples intentionally use only the Core semantic namespace (`xq:`) plus ordinary `context` keys. The Network example uses the published `xq.net:` namespace. No `xq.ais:`, `xq.adsb:`, `xq.rf:` or imagery profile namespace is allocated by these examples.
 
 ## Source-reported state is evidence, not semantic truth
 
@@ -19,7 +19,7 @@ Reference:
 
 The same principle applies generally to source-native status flags: preserve them, but do not silently elevate them into the semantic interpretation layer.
 
-## Mobility
+## Mobility / AdTech
 
 File: `semantic-mobility.json`
 
@@ -103,6 +103,50 @@ RF-native fields such as sample index, stream ID, feature ID, detector element I
 
 The existing experimental RF event structure therefore remains a valid source representation rather than being replaced by the Core JSON object.
 
+
+## Network — normalized connection observation
+
+Network Profile 0.1 uses the Core modality `xq:network` and profile-specific `xq.net:` semantics. A connection is an observation of traffic to an endpoint, not proof that a persistent relationship or service exists.
+
+```json
+{
+  "xq_version": "0.1",
+  "id": "evt:semantic-network-001",
+  "event_time": "2026-09-06T08:00:00Z",
+  "source": "synthetic-network-sensor",
+  "modality": "xq:network",
+  "class": "normalized_observation",
+  "profile": "xq.net:profile-0.1",
+  "subject": "address:ip:192.0.2.10",
+  "object": "endpoint:ip:198.51.100.8:443/tcp",
+  "feature": "xq.net:connection",
+  "action": "xq:observed",
+  "polarity": 0,
+  "provenance": {
+    "producer": "synthetic-network-eventizer",
+    "producer_version": "0.1.0",
+    "method": "algorithmic",
+    "source_records": [
+      "synthetic:connection:1"
+    ],
+    "parameters": {
+      "mapping": "connection-normalize"
+    }
+  },
+  "context": {
+    "observation_point": "sensor-demo",
+    "protocol": "tcp",
+    "originator_port": 52101,
+    "responder_port": 443,
+    "application_stack": [
+      "tls"
+    ]
+  }
+}
+```
+
+The Network Profile further distinguishes device, interface, address, endpoint and service referents. A MAC address is interface-scoped by default, and higher-order relationships such as `xq.net:first_observed` are derived rather than copied from a single source record.
+
 ## Imagery
 
 File: `semantic-imagery.json`
@@ -141,4 +185,4 @@ confidence
 provenance/context
 ```
 
-They do not imply that AIS, ADS-B, RF or imagery profile semantics are complete or stable.
+The Network example demonstrates the published Network Profile 0.1. The AIS, ADS-B, RF and imagery examples do not imply that those future profile semantics are complete or stable.

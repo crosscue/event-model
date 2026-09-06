@@ -2,7 +2,7 @@
 
 `valid/` contains documents expected to pass structural and semantic validation.
 
-`invalid/` contains documents deliberately constructed to fail at least one structural, Core-semantic, collection-semantic, or Mobility Profile rule.
+`invalid/` contains documents deliberately constructed to fail at least one structural, Core-semantic, collection-semantic, Mobility Profile rule, or Network Profile rule.
 
 `manifest.json` is the reference fixture list used by:
 

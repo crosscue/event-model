@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.1.1",
   "valid": [
     "valid/assessment.json",
     "valid/collection-unique-ids.json",
@@ -19,7 +19,23 @@
     "valid/semantic-ais.json",
     "valid/semantic-imagery.json",
     "valid/semantic-mobility.json",
-    "valid/semantic-rf.json"
+    "valid/semantic-rf.json",
+    "valid/network-arp-001.json",
+    "valid/network-connection-001.json",
+    "valid/network-derived-multiple-observation-points.json",
+    "valid/network-dns-alias.json",
+    "valid/network-dns-answer-001.json",
+    "valid/network-dns-query-001.json",
+    "valid/network-failed-attempt-endpoint-only.json",
+    "valid/network-presence-001.json",
+    "valid/network-relationship-001.json",
+    "valid/network-service-001.json",
+    "valid/network-tls-001.json",
+    "valid/network-application-stack-canonical.json",
+    "valid/network-dhcp-address-assigned.json",
+    "valid/network-dhcp-hostname-reported.json",
+    "valid/network-software-observed.json",
+    "valid/network-udp-unidirectional-relationship.json"
   ],
   "invalid": [
     "invalid/bad-confidence.json",
@@ -35,6 +51,23 @@
     "invalid/mobility-stay-above-threshold.json",
     "invalid/non-finite-number.json",
     "invalid/object-without-subject.json",
-    "invalid/unqualified-feature.json"
+    "invalid/unqualified-feature.json",
+    "invalid/network-application-stack-not-canonical.json",
+    "invalid/network-arp-promotes-mac-to-device.json",
+    "invalid/network-derived-duplicate-observation-points.json",
+    "invalid/network-dns-alias-collapsed-to-resolution.json",
+    "invalid/network-dns-query-with-response-code.json",
+    "invalid/network-first-observed-not-derived.json",
+    "invalid/network-local-observed-instead-of-core.json",
+    "invalid/network-observation-without-viewpoint.json",
+    "invalid/network-presence-first-observed-labeled-enter.json",
+    "invalid/network-presence-without-scope.json",
+    "invalid/network-relationship-future-aggregate.json",
+    "invalid/network-relationship-missing-directionality.json",
+    "invalid/network-service-not-endpoint-to-service.json",
+    "invalid/network-wrong-modality.json",
+    "invalid/network-connection-targets-service.json",
+    "invalid/network-relationship-labeled-established.json",
+    "invalid/network-service-from-failed-attempt.json"
   ]
 }

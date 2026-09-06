@@ -1,5 +1,5 @@
 {
-  "registry_version": "0.1.0",
+  "registry_version": "0.1.1",
   "status": "experimental",
   "namespaces": [
     {
@@ -10,6 +10,11 @@
     {
       "prefix": "xq.mob:",
       "scope": "Crosscue Event Model Mobility Profile 0.1",
+      "status": "allocated"
+    },
+    {
+      "prefix": "xq.net:",
+      "scope": "Crosscue Event Model Network Profile 0.1",
       "status": "allocated"
     }
   ],

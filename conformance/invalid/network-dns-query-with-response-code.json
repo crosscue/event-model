@@ -1,0 +1,30 @@
+{
+  "xq_version": "0.1",
+  "id": "bad:net-dns-future-response",
+  "event_time": "2026-09-06T08:00:02.000000000Z",
+  "source": "sensor-01",
+  "modality": "xq:network",
+  "class": "normalized_observation",
+  "profile": "xq.net:profile-0.1",
+  "subject": "address:ip:192.0.2.10",
+  "object": "domain:example.com",
+  "feature": "xq.net:dns_query",
+  "action": "xq.net:queried",
+  "polarity": 0,
+  "provenance": {
+    "producer": "example-network-eventizer",
+    "producer_version": "0.1.0",
+    "method": "algorithmic",
+    "source_records": [
+      "example:dns:1"
+    ],
+    "parameters": {
+      "mapping": "dns-query-normalize"
+    }
+  },
+  "context": {
+    "observation_point": "sensor-01",
+    "query_type": "A",
+    "response_code": "NOERROR"
+  }
+}

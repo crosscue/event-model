@@ -1,0 +1,29 @@
+{
+  "xq_version": "0.1",
+  "id": "bad:net-presence-scope",
+  "event_time": "2026-09-06T08:00:01.000000000Z",
+  "source": "sensor-01",
+  "modality": "xq:network",
+  "class": "derived",
+  "profile": "xq.net:profile-0.1",
+  "subject": "interface:mac:00:11:22:33:44:55",
+  "object": "network:lab-lan",
+  "feature": "xq:presence",
+  "action": "xq.net:first_observed",
+  "state": "xq:present",
+  "polarity": 1,
+  "provenance": {
+    "producer": "example-network-eventizer",
+    "producer_version": "0.1.0",
+    "method": "algorithmic",
+    "parents": [
+      "evt:net-demo-arp-001"
+    ],
+    "parameters": {
+      "mapping": "scoped-presence-first-observation"
+    }
+  },
+  "context": {
+    "observation_point": "sensor-01"
+  }
+}

@@ -2,7 +2,7 @@
 ## Core Specification 0.1
 
 **Status:** Experimental Specification  
-**Package version:** `0.1.0`  
+**Package version:** `0.1.1`  
 **Wire version:** `xq_version = "0.1"`  
 **Specification identifier:** `crosscue-event-model-core-0.1`  
 **Licence:** Apache License 2.0
@@ -33,7 +33,7 @@ materialized analytical projections
 
 The Core does not attempt to replace source-native representations. Producers SHOULD retain sufficient provenance to locate or reconstruct source evidence where policy and architecture permit.
 
-Core 0.1 is intentionally experimental in maturity, but version 0.1.0 freezes the Core schema and registered Core semantic bindings for the 0.1.x release line. Materially different domains SHOULD stress the abstraction through profiles and extensions. Any incompatible Core change discovered through that work belongs in a future Core version rather than silently changing 0.1 semantics.
+Core 0.1 is intentionally experimental in maturity. Version 0.1.0 froze the Core schema and existing registered Core semantic bindings for the 0.1.x release line; 0.1.1 adds only a compatible coarse network modality registration and Network Profile 0.1. Materially different domains SHOULD stress the abstraction through profiles and extensions. Any incompatible Core change discovered through that work belongs in a future Core version rather than silently changing 0.1 semantics.
 
 ---
 
@@ -274,6 +274,7 @@ Examples:
 
 ```text
 xq:mobility
+xq:network
 xq:multimodal
 org.example:rf
 org.example:access-control
@@ -358,10 +359,11 @@ Example:
 
 Core 0.1 does not require a profile.
 
-The first allocated profile identifier is:
+The allocated profile identifiers are:
 
 ```text
 xq.mob:profile-0.1
+xq.net:profile-0.1
 ```
 
 A consumer MUST NOT assume profile conformance merely because `modality` has a related value. Profile conformance is an explicit claim.
@@ -926,11 +928,12 @@ This policy is intentionally conservative: a small Core that survives multiple d
 
 The normative namespace rules are in `NAMESPACES.md`.
 
-Core 0.1 allocates only:
+Core package 0.1.1 allocates:
 
 ```text
 xq:
 xq.mob:
+xq.net:
 ```
 
 Other apparent `xq.<profile>:` names are not official unless registered in `vocabulary/xq-namespaces.json`.
@@ -962,7 +965,7 @@ A profile MUST NOT:
 
 ## 41. Mobility Profile 0.1
 
-The first published profile is `profiles/crosscue-mobility-0.1.md` with wire identifier:
+The Mobility Profile is published as `profiles/crosscue-mobility-0.1.md` with wire identifier:
 
 ```text
 xq.mob:profile-0.1
@@ -987,7 +990,34 @@ into Core semantics.
 
 ---
 
-## 42. Conformance layers
+
+## 42. Network Profile 0.1
+
+Network Profile 0.1 is published as `profiles/crosscue-network-0.1.md` with wire identifier:
+
+```text
+xq.net:profile-0.1
+```
+
+and Core modality:
+
+```text
+xq:network
+```
+
+It defines network-specific semantics for connection observations, communication relationships, address/hostname bindings, DNS, TLS, services, software and explicitly scoped network presence while preserving the distinction:
+
+```text
+device ≠ interface ≠ address ≠ endpoint ≠ service
+```
+
+The profile reuses Core `xq:observed` for neutral observation and keeps `xq.net:first_observed` profile-specific. `first_observed` is capture/observation-scope knowledge and MUST NOT be interpreted as external-world establishment or onset.
+
+The profile also treats MAC addresses as interface-scoped by default; stronger device identity requires stronger evidence.
+
+---
+
+## 43. Conformance layers
 
 Conformance is layered:
 
@@ -1021,7 +1051,7 @@ See `CONFORMANCE.md`.
 
 ---
 
-## 43. Producer conformance
+## 44. Producer conformance
 
 A Core 0.1 Producer MUST:
 
@@ -1039,7 +1069,7 @@ A producer claiming Core Vocabulary conformance MUST additionally use registered
 
 ---
 
-## 44. Consumer conformance
+## 45. Consumer conformance
 
 A Core 0.1 Consumer MUST:
 
@@ -1054,7 +1084,7 @@ A consumer MUST NOT interpret an unknown qualified identifier as if it were a re
 
 ---
 
-## 45. Machine validation and fixtures
+## 46. Machine validation and fixtures
 
 The repository provides:
 
@@ -1071,7 +1101,7 @@ Conforming implementations are not required to use the reference validator or Py
 
 ---
 
-## 46. Privacy, security and dual use
+## 47. Privacy, security and dual use
 
 The model can increase analytical power by making correlation easier. This can also increase the sensitivity of datasets and derived products.
 
@@ -1096,7 +1126,7 @@ Public conformance fixtures SHOULD be synthetic.
 
 ---
 
-## 47. Out of scope for Core 0.1
+## 48. Out of scope for Core 0.1
 
 The following are intentionally not standardized in Core 0.1:
 
@@ -1115,7 +1145,7 @@ The following are intentionally not standardized in Core 0.1:
 
 ---
 
-## 48. Analytical projections
+## 49. Analytical projections
 
 Profiles and applications MAY materialize event-derived views such as:
 
@@ -1135,7 +1165,7 @@ A projection SHOULD remain traceable to its evidence and eventization parameters
 
 ---
 
-## 49. Reproducibility
+## 50. Reproducibility
 
 For deterministic eventizers, the desired property is:
 
@@ -1150,12 +1180,12 @@ Profiles whose semantics depend on thresholds MUST specify how effective paramet
 
 ---
 
-## 50. Versioning
+## 51. Versioning
 
 Package/documentation version:
 
 ```text
-0.1.0
+0.1.1
 ```
 
 Wire version:
@@ -1164,19 +1194,20 @@ Wire version:
 xq_version = "0.1"
 ```
 
-The 0.1.x line is compatibility-frozen at 0.1.0:
+The 0.1.x line remains compatibility-frozen from 0.1.0:
 
 - existing Core field meanings MUST NOT be changed incompatibly within 0.1.x;
 - existing registered `xq:` term meanings and Core composition bindings MUST NOT be changed incompatibly within 0.1.x;
-- patch releases MAY correct editorial defects, validator defects, or add non-normative examples and tests that clarify existing semantics;
-- new or incompatible Core semantics SHOULD target a later Core version, normally 0.2 or greater;
+- patch releases MAY correct editorial or validator defects and add tests or non-normative examples that clarify existing semantics;
+- a patch release MAY register a new coarse `xq:` modality when an official profile for a previously unregistered domain is published, provided the registration does not redefine any existing term or composition;
+- new Core features, actions, states, or incompatible semantics SHOULD target a later Core version, normally 0.2 or greater;
 - a change that breaks Core wire semantics requires an explicit `xq_version` decision.
 
 Profile versions evolve independently and MAY add domain-specific semantics without changing Core.
 
 ---
 
-## 51. Licensing
+## 52. Licensing
 
 This specification and repository materials are licensed under the Apache License, Version 2.0. See `LICENSE`.
 
@@ -1184,12 +1215,13 @@ The licence does not itself grant rights to third-party trademarks, source data,
 
 ---
 
-## 52. Cross-domain semantic examples
+## 53. Cross-domain semantic examples
 
 The repository includes non-normative semantic examples for:
 
 ```text
-mobility
+mobility / AdTech
+network
 AIS
 ADS-B
 RF
@@ -1198,7 +1230,7 @@ imagery
 
 They are collected in [`examples/SEMANTIC-EXAMPLES.md`](examples/SEMANTIC-EXAMPLES.md).
 
-The AIS, ADS-B, RF and imagery examples demonstrate Core semantics only. They do **not** allocate profile namespaces or claim profile conformance. Coarse Core modality identifiers such as `xq:ais` and `xq:rf` do not imply that `xq.ais:` or `xq.rf:` profile namespaces exist.
+The Network example demonstrates the published Network Profile. The AIS, ADS-B, RF and imagery examples demonstrate Core semantics only. They do **not** allocate profile namespaces or claim profile conformance. Coarse Core modality identifiers such as `xq:ais` and `xq:rf` do not imply that `xq.ais:` or `xq.rf:` profile namespaces exist.
 
 These examples are deliberately conservative: source-native status and measurements remain evidence, while derived semantic transitions require eventizer logic and provenance.
 

@@ -1,0 +1,30 @@
+{
+  "xq_version": "0.1",
+  "id": "bad:net-service-failed-attempt",
+  "event_time": "2026-09-06T08:00:03.000000000Z",
+  "source": "sensor-01",
+  "modality": "xq:network",
+  "class": "normalized_observation",
+  "profile": "xq.net:profile-0.1",
+  "subject": "endpoint:ip:198.51.100.8:443/tcp",
+  "object": "service:net:tls:ip:198.51.100.8:443/tcp",
+  "feature": "xq.net:service",
+  "action": "xq:observed",
+  "polarity": 0,
+  "provenance": {
+    "producer": "example-network-eventizer",
+    "producer_version": "0.1.0",
+    "method": "algorithmic",
+    "source_records": [
+      "example:service:1"
+    ],
+    "parameters": {
+      "mapping": "service-normalize"
+    }
+  },
+  "context": {
+    "observation_point": "sensor-01",
+    "application_stack": [],
+    "connection_state": "rejected"
+  }
+}

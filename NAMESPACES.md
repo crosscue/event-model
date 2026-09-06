@@ -49,17 +49,25 @@ xq.<profile>:
 
 A namespace is official only when it appears in `vocabulary/xq-namespaces.json` and a corresponding profile has been published.
 
-Core 0.1 allocates only:
+Core package 0.1.1 allocates:
 
 ```text
 xq.mob:
+xq.net:
 ```
 
-for Mobility Profile 0.1.
+for Mobility Profile 0.1 and Network Profile 0.1 respectively.
 
-Names such as `xq.rf:`, `xq.ais:` or `xq.adsb:` are **not allocated by Core 0.1**. They may be allocated later if/when those profiles are published.
+Names such as `xq.rf:`, `xq.ais:` or `xq.adsb:` are **not allocated by Core 0.1.1**. They may be allocated later if/when those profiles are published.
 
 This does not prevent Core from registering coarse modality values such as `xq:rf`, `xq:ais` or `xq:ads-b`. A Core modality identifier names a source/domain family; it does not allocate or imply a profile namespace.
+
+
+## 3.1 Coarse modality registration
+
+A published profile MAY be accompanied by an additive Core registration of a coarse modality identifier such as `xq:network`. Such a registration names a domain family; it does not move profile-specific features, actions, states or entity semantics into Core.
+
+Within the 0.1.x line, adding a new coarse modality alongside a newly published profile is considered compatible provided that no existing Core term or composition changes meaning.
 
 ## 4. Third-party namespaces
 

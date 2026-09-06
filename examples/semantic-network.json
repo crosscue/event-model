@@ -1,0 +1,34 @@
+{
+  "xq_version": "0.1",
+  "id": "evt:semantic-network-001",
+  "event_time": "2026-09-06T08:00:00Z",
+  "source": "synthetic-network-sensor",
+  "modality": "xq:network",
+  "class": "normalized_observation",
+  "profile": "xq.net:profile-0.1",
+  "subject": "address:ip:192.0.2.10",
+  "object": "endpoint:ip:198.51.100.8:443/tcp",
+  "feature": "xq.net:connection",
+  "action": "xq:observed",
+  "polarity": 0,
+  "provenance": {
+    "producer": "synthetic-network-eventizer",
+    "producer_version": "0.1.0",
+    "method": "algorithmic",
+    "source_records": [
+      "synthetic:connection:1"
+    ],
+    "parameters": {
+      "mapping": "connection-normalize"
+    }
+  },
+  "context": {
+    "observation_point": "sensor-demo",
+    "protocol": "tcp",
+    "originator_port": 52101,
+    "responder_port": 443,
+    "application_stack": [
+      "tls"
+    ]
+  }
+}

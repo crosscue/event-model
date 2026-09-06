@@ -1,6 +1,6 @@
 {
   "xq_version": "0.1",
-  "registry_version": "0.1.0",
+  "registry_version": "0.1.1",
   "status": "experimental",
   "semantic_identifier_syntax": "<namespace>:<term>; lowercase ASCII; namespace may contain dots or hyphens",
   "terms": [
@@ -51,6 +51,21 @@
       ],
       "do_not_confuse_with": [
         "event class transition or derived"
+      ]
+    },
+    {
+      "id": "xq:network",
+      "kind": "modality",
+      "definition": "Network telemetry and network-derived semantic events represented under a network profile or compatible extension.",
+      "status": "experimental",
+      "examples": [
+        "network connection observations",
+        "DNS observations",
+        "network-derived relationships"
+      ],
+      "do_not_confuse_with": [
+        "event class derived or fusion",
+        "the xq.net: profile namespace"
       ]
     },
     {

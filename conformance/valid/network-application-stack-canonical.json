@@ -1,0 +1,32 @@
+{
+  "xq_version": "0.1",
+  "id": "evt:net-xmpp-tls-001",
+  "event_time": "2026-09-06T08:10:00Z",
+  "source": "sensor-01",
+  "modality": "xq:network",
+  "class": "normalized_observation",
+  "profile": "xq.net:profile-0.1",
+  "subject": "address:ip:192.0.2.10",
+  "object": "endpoint:ip:198.51.100.8:5223/tcp",
+  "feature": "xq.net:tls_session",
+  "action": "xq:observed",
+  "polarity": 0,
+  "provenance": {
+    "producer": "example-network-eventizer",
+    "producer_version": "0.1.0",
+    "method": "algorithmic",
+    "parameters": {
+      "mapping": "tls_session-observed"
+    },
+    "source_records": [
+      "example:tls:2"
+    ]
+  },
+  "context": {
+    "observation_point": "sensor-01",
+    "application_stack": [
+      "xmpp",
+      "tls"
+    ]
+  }
+}

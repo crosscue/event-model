@@ -1,0 +1,29 @@
+{
+  "xq_version": "0.1",
+  "id": "evt:net-demo-dns-answer-001",
+  "event_time": "2026-09-06T08:00:02.000000000Z",
+  "source": "sensor-01",
+  "modality": "xq:network",
+  "class": "normalized_observation",
+  "profile": "xq.net:profile-0.1",
+  "subject": "domain:example.com",
+  "object": "address:ip:198.51.100.8",
+  "feature": "xq.net:name_resolution",
+  "action": "xq.net:resolved_to",
+  "polarity": 0,
+  "provenance": {
+    "producer": "example-network-eventizer",
+    "producer_version": "0.1.0",
+    "method": "algorithmic",
+    "source_records": [
+      "example:dns:1"
+    ],
+    "parameters": {
+      "mapping": "dns-address-answer-normalize"
+    }
+  },
+  "context": {
+    "observation_point": "sensor-01",
+    "query_type": "A"
+  }
+}

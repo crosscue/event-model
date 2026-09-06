@@ -2,7 +2,7 @@
   "xq_version": "0.1",
   "id": "evt:example-mobility-enter-001",
   "event_time": "2026-08-30T08:20:00Z",
-  "source": "synthetic-mobility",
+  "source": "synthetic-adtech-mobility",
   "modality": "xq:mobility",
   "class": "transition",
   "subject": "device:demo-a",
@@ -16,6 +16,6 @@
     "accuracy_m": 18
   },
   "context": {
-    "source_family": "mobility"
+    "source_family": "adtech_mobility"
   }
 }

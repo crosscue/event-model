@@ -12,6 +12,8 @@ Crosscue Event Model Core 0.1 Consumer
 Crosscue Event Model Core Vocabulary 0.1 Producer
 Crosscue Event Model Mobility Profile 0.1 Producer
 Crosscue Event Model Mobility Profile 0.1 Consumer
+Crosscue Event Model Network Profile 0.1 Producer
+Crosscue Event Model Network Profile 0.1 Consumer
 ```
 
 A claim SHOULD identify the implementation version and the exact specification/profile version used.
@@ -167,3 +169,22 @@ END
 Byte-equivalent JSON is not required unless a test explicitly defines canonical bytes.
 
 Whitespace and member ordering are insignificant. JSON and JSONL examples should be semantically equivalent after parsing.
+
+
+## 11. Network Profile fixtures
+
+Network Profile 0.1 adds deterministic positive and negative fixtures for:
+
+- `xq:network` + `xq.net:profile-0.1`;
+- reuse of Core `xq:observed`;
+- device/interface/address/endpoint/service separation;
+- ARP first-observed binding derivation;
+- DNS query temporal purity;
+- DNS alias versus address resolution;
+- endpoint-versus-service semantics;
+- explicit scoped presence;
+- relationship evidence directionality and first-observed temporal purity;
+- single/multiple observation-point rules;
+- deterministic application-stack canonicalization.
+
+Profile-specific validation is dispatched by the reference validator according to the explicit `profile` claim.

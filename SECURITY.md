@@ -9,6 +9,7 @@ Do not include the following in public issues, pull requests or fixtures:
 - customer or partner data;
 - live or historical operational intelligence;
 - personal mobility traces;
+- sensitive network telemetry such as internal IP/MAC mappings, hostnames, service inventories, packet/flow evidence or derived communication relationships;
 - authentication material or secrets;
 - protected source identifiers;
 - sensitive collection parameters;

@@ -1,6 +1,6 @@
 # Crosscue Event Model
 
-**Core 0.1.0 — Initial Public Release**
+**Core 0.1.1 — Network Profile Release**
 
 The **Crosscue Event Model** is a small semantic intermediate representation for temporally anchored observations, state transitions, derived facts, fusion results, and analytical assessments across heterogeneous data sources.
 
@@ -45,7 +45,7 @@ The model deliberately does **not** replace source-native schemas such as AIS, A
 
 This is an **experimental specification**, not an industry standard and not evidence of external endorsement or adoption.
 
-Core 0.1 has been exercised primarily through the Mobility Profile. This release also includes non-normative semantic examples for AIS, ADS-B, RF and imagery to stress the Core vocabulary without pretending those profiles already exist.
+Core 0.1 has now been exercised through two materially different published profiles: Mobility Profile 0.1 and Network Profile 0.1. Non-normative semantic examples for AIS, ADS-B, RF and imagery continue to stress the Core vocabulary without pretending those profiles already exist.
 
 **Core 0.1 is frozen for the 0.1.x release line.** Existing Core fields, registered `xq:` term meanings, and registered Core composition bindings will not be changed incompatibly within 0.1.x. Lessons from materially different profiles are expected to inform a future 0.2 rather than silently redefine 0.1 semantics.
 
@@ -73,21 +73,25 @@ See [`SECURITY.md`](SECURITY.md) and [`WHAT-THIS-IS-NOT.md`](WHAT-THIS-IS-NOT.md
 - [`tools/validate.py`](tools/validate.py) — reference fixture/event validator.
 - [`profiles/crosscue-mobility-0.1.md`](profiles/crosscue-mobility-0.1.md) — first domain profile.
 - [`profiles/xq-mob-vocabulary.json`](profiles/xq-mob-vocabulary.json) — Mobility-specific vocabulary.
+- [`profiles/crosscue-network-0.1.md`](profiles/crosscue-network-0.1.md) — Network Profile 0.1.
+- [`profiles/xq-net-vocabulary.json`](profiles/xq-net-vocabulary.json) — Network-specific vocabulary.
+- [`examples/network-profile-0.1-events.json`](examples/network-profile-0.1-events.json) — synthetic Network Profile examples.
 - [`examples/crosscue-core-events.json`](examples/crosscue-core-events.json) — synthetic event examples.
-- [`examples/SEMANTIC-EXAMPLES.md`](examples/SEMANTIC-EXAMPLES.md) — mobility, AIS, ADS-B, RF and exploratory imagery mappings at Core semantic level.
+- [`examples/SEMANTIC-EXAMPLES.md`](examples/SEMANTIC-EXAMPLES.md) — mobility/AdTech, Network, AIS, ADS-B, RF and exploratory imagery mappings.
 - [`MIGRATION.md`](MIGRATION.md) — migration from the exploratory CLI object and earlier draft naming.
-- [`RELEASE-NOTES.md`](RELEASE-NOTES.md) — 0.1.0 release scope and compatibility freeze.
+- [`RELEASE-NOTES.md`](RELEASE-NOTES.md) — 0.1.1 release scope and compatibility notes.
 
 ## Namespaces
 
-Only these namespaces are allocated by this release:
+These namespaces are allocated by this release:
 
 ```text
 xq:       Core vocabulary
 xq.mob:   Mobility Profile 0.1
+xq.net:   Network Profile 0.1
 ```
 
-Future profile prefixes are allocated only when a corresponding official profile is published. For example, an RF profile might later allocate `xq.rf:`, but it is **not** allocated by Core 0.1.
+Future profile prefixes are allocated only when a corresponding official profile is published. For example, an RF profile might later allocate `xq.rf:`, but it is **not** allocated by Core 0.1.1.
 
 Third parties should use a namespace they control, for example:
 
@@ -149,6 +153,7 @@ The validator checks JSON Schema constraints plus semantic rules that JSON Schem
 - explicit timezone offsets;
 - registered composition polarity/state bindings;
 - Mobility Profile eventizer provenance parameters;
+- Network Profile entity-layer, viewpoint, first-observed, DNS, service and presence rules;
 - `STAY` versus `DWELL` duration semantics;
 - unique event IDs within the optional collection envelope.
 

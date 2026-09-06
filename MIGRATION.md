@@ -1,8 +1,14 @@
 # Migration to Crosscue Event Model Core 0.1
 
-This document records the migration from the exploratory object.
+This document records the migration from the exploratory `csv2generic` object and the earlier draft naming.
 
 ## 1. Public naming
+
+Earlier draft name:
+
+```text
+XQ Event Model (XQEM)
+```
 
 Current public name:
 
@@ -10,7 +16,7 @@ Current public name:
 Crosscue Event Model
 ```
 
-Semantic namespace:
+The semantic namespace remains:
 
 ```text
 xq:
@@ -20,11 +26,19 @@ The aim is to decouple the human-facing project name from the wire vocabulary.
 
 ## 2. Version field
 
+Earlier draft:
+
+```json
+"xqem_version": "0.1"
+```
+
 Current draft:
 
 ```json
 "xq_version": "0.1"
 ```
+
+This is an intentional pre-release breaking change.
 
 ## 3. Exploratory CLI field migration
 

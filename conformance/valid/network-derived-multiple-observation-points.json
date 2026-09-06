@@ -1,0 +1,37 @@
+{
+  "xq_version": "0.1",
+  "id": "evt:net-demo-relationship-multi-001",
+  "event_time": "2026-09-06T08:00:00.000000000Z",
+  "source": "network-fusion",
+  "modality": "xq:network",
+  "class": "derived",
+  "profile": "xq.net:profile-0.1",
+  "subject": "address:ip:192.0.2.10",
+  "object": "endpoint:ip:198.51.100.8:443/tcp",
+  "feature": "xq.net:communication_relationship",
+  "action": "xq.net:first_observed",
+  "polarity": 1,
+  "provenance": {
+    "producer": "example-network-eventizer",
+    "producer_version": "0.1.0",
+    "method": "algorithmic",
+    "parents": [
+      "evt:net-demo-connection-001",
+      "evt:net-demo-connection-002"
+    ],
+    "parameters": {
+      "mapping": "relationship-first-observation"
+    }
+  },
+  "context": {
+    "protocol": "tcp",
+    "application_stack": [
+      "tls"
+    ],
+    "evidence_directionality": "bidirectional_observed",
+    "observation_points": [
+      "sensor-01",
+      "sensor-02"
+    ]
+  }
+}

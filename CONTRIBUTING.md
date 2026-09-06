@@ -38,3 +38,8 @@ Contributions MUST use synthetic or intentionally public examples. See `SECURITY
 ## Licence
 
 Unless explicitly stated otherwise, contributions intentionally submitted for inclusion are licensed under the Apache License, Version 2.0, consistent with Section 5 of that licence.
+
+
+## Profile-driven coarse modalities
+
+A new official domain profile may propose an additive coarse Core modality (for example `xq:network`) in the same release that allocates its profile namespace. This exception does not waive the cross-domain evidence requirement for new Core features, actions or states.

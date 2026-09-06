@@ -1,0 +1,30 @@
+{
+  "xq_version": "0.1",
+  "id": "evt:net-udp-relationship-001",
+  "event_time": "2026-09-06T08:10:00Z",
+  "source": "sensor-01",
+  "modality": "xq:network",
+  "class": "derived",
+  "profile": "xq.net:profile-0.1",
+  "subject": "address:ip:192.0.2.10",
+  "object": "endpoint:ip:198.51.100.53:53/udp",
+  "feature": "xq.net:communication_relationship",
+  "action": "xq.net:first_observed",
+  "polarity": 1,
+  "provenance": {
+    "producer": "example-network-eventizer",
+    "producer_version": "0.1.0",
+    "method": "algorithmic",
+    "parameters": {
+      "mapping": "communication_relationship-first_observed"
+    },
+    "parents": [
+      "evt:parent:1"
+    ]
+  },
+  "context": {
+    "observation_point": "sensor-01",
+    "protocol": "udp",
+    "evidence_directionality": "unidirectional_observed"
+  }
+}
