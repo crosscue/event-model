@@ -35,7 +35,14 @@
     "valid/network-dhcp-address-assigned.json",
     "valid/network-dhcp-hostname-reported.json",
     "valid/network-software-observed.json",
-    "valid/network-udp-unidirectional-relationship.json"
+    "valid/network-udp-unidirectional-relationship.json",
+    "valid/space-identity-hypothesis.json",
+    "valid/space-cause-hypothesis.json",
+    "valid/space-residual-sparse.json",
+    "valid/space-residual-time-rounding.json",
+    "valid/space-residual-history.json",
+    "../examples/space-consistency-residual.json",
+    "../examples/space-hypotheses.json"
   ],
   "invalid": [
     "invalid/bad-confidence.json",
@@ -68,6 +75,28 @@
     "invalid/network-wrong-modality.json",
     "invalid/network-connection-targets-service.json",
     "invalid/network-relationship-labeled-established.json",
-    "invalid/network-service-from-failed-attempt.json"
+    "invalid/network-service-from-failed-attempt.json",
+    "invalid/space-residual-assessment-class.json",
+    "invalid/space-residual-confidence-from-score.json",
+    "invalid/space-residual-wrong-unit.json",
+    "invalid/space-residual-component-norm.json",
+    "invalid/space-residual-reporting-epoch.json",
+    "invalid/space-residual-reversed-window.json",
+    "invalid/space-residual-duration.json",
+    "invalid/space-residual-missing-input-evidence.json",
+    "invalid/space-residual-missing-method-version.json",
+    "invalid/space-residual-non-utc.json",
+    "invalid/space-residual-string-boolean.json",
+    "invalid/space-residual-calibrated-heuristic.json",
+    "invalid/space-residual-malformed-context.json",
+    "invalid/space-residual-percentile-without-population.json",
+    "invalid/space-residual-wrong-modality.json",
+    "invalid/space-identity-missing-candidate.json",
+    "invalid/space-hypothesis-no-evidence.json",
+    "invalid/space-hypothesis-unexplained-confidence.json",
+    "invalid/space-cause-no-alternatives.json",
+    "invalid/space-cause-asserted-state.json",
+    "invalid/space-hypothesis-no-limitations.json",
+    "invalid/space-unrecognized-type.json"
   ]
 }

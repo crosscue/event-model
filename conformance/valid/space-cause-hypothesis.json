@@ -1,0 +1,41 @@
+{
+  "xq_version": "0.1",
+  "source": "example:analyst",
+  "modality": "xq.space:orbital",
+  "class": "assessment",
+  "profile": "xq.space:profile-0.1",
+  "action": "xq.space:assessed",
+  "polarity": 0,
+  "id": "example:cause-hypothesis-001",
+  "event_time": "2026-01-03T10:00:00Z",
+  "subject": "norad:990001",
+  "feature": "xq.space:cause_hypothesis",
+  "provenance": {
+    "producer": "synthetic-assessment-workflow",
+    "producer_version": "0.1-draft",
+    "method": "manual",
+    "parents": [
+      "example:orbital-node:synthetic-residual-001"
+    ],
+    "source_records": [
+      "example:input-quality-review-001"
+    ]
+  },
+  "context": {
+    "assessment": {
+      "statement": "Input reconstruction or rounding may contribute to the synthetic residual.",
+      "rationale": "The cited residual uses reconstructed inputs; the fictional quality review identifies rounding as a possible contributor but does not quantify its effect.",
+      "limitations": "Neither reconstruction flags nor this residual establish physical cause or prove an input artefact.",
+      "alternatives": [
+        "Orbit-fit differences between published element sets.",
+        "Physical orbital evolution not distinguished by these inputs."
+      ]
+    },
+    "example_evidence": {
+      "example:input-quality-review-001": {
+        "issued_at": "2026-01-03T09:30:00Z",
+        "summary": "Fictional review: both inputs were reconstructed; no independent trajectory truth or controlled sensitivity analysis was available."
+      }
+    }
+  }
+}

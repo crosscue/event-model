@@ -1,0 +1,35 @@
+{
+  "xq_version": "0.1",
+  "source": "example:analyst",
+  "modality": "xq.space:orbital",
+  "class": "assessment",
+  "profile": "xq.space:profile-0.1",
+  "action": "xq.space:assessed",
+  "polarity": 0,
+  "id": "example:identity-hypothesis-001",
+  "event_time": "2026-01-03T09:00:00Z",
+  "subject": "track:example-unresolved-a",
+  "object": "norad:990001",
+  "feature": "xq.space:identity_hypothesis",
+  "provenance": {
+    "producer": "synthetic-assessment-workflow",
+    "producer_version": "0.1-draft",
+    "method": "manual",
+    "source_records": [
+      "example:association-review-001"
+    ]
+  },
+  "context": {
+    "assessment": {
+      "statement": "The synthetic track may refer to the synthetic catalogue referent norad:990001.",
+      "rationale": "The fictional association review reports compatible source identifiers and overlapping track coverage.",
+      "limitations": "Illustrates an association judgment only. Candidate identity is unverified and the review did not exhaust alternative matches."
+    },
+    "example_evidence": {
+      "example:association-review-001": {
+        "issued_at": "2026-01-03T08:30:00Z",
+        "summary": "Fictional review: source identifier hints and track coverage are compatible with the candidate; no authoritative identity confirmation."
+      }
+    }
+  }
+}
