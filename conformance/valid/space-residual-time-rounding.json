@@ -1,0 +1,88 @@
+{
+  "xq_version": "0.1",
+  "id": "example:orbital-node:synthetic-residual-001",
+  "event_time": "2026-01-02T12:00:00Z",
+  "source": "example:orbital-node",
+  "modality": "xq.space:orbital",
+  "class": "derived",
+  "profile": "xq.space:profile-0.1",
+  "subject": "norad:990001",
+  "feature": "xq.space:consistency_residual",
+  "action": "xq:observed",
+  "polarity": 0,
+  "magnitude": 5,
+  "unit": "km",
+  "provenance": {
+    "producer": "synthetic-space-adapter",
+    "producer_version": "0.1-draft",
+    "method": "algorithmic",
+    "source_records": [
+      "example:input-earlier",
+      "example:input-later"
+    ],
+    "xq.space:method": {
+      "name": "sgp4_consistency",
+      "version": "0.2",
+      "maturity": "experimental"
+    },
+    "xq.space:inputs": {
+      "earlier": {
+        "id": "example:input-earlier",
+        "source": "example:catalogue",
+        "representation": "reconstructed_tle",
+        "reconstructed": true
+      },
+      "later": {
+        "id": "example:input-later",
+        "source": "example:catalogue",
+        "representation": "reconstructed_tle",
+        "reconstructed": true
+      }
+    },
+    "xq.space:processing": {
+      "run_id": null
+    }
+  },
+  "context": {
+    "reporting_epoch": "2026-01-02T12:00:00Z",
+    "observation_window": {
+      "start": "2026-01-02T06:00:00Z",
+      "end": "2026-01-02T12:00:00Z",
+      "duration_hours": 6.0000001
+    },
+    "residuals": {
+      "velocity_km_s": 0.004,
+      "radial_km": -3,
+      "in_track_km": 4,
+      "cross_track_km": 0
+    },
+    "element_changes": {
+      "semi_major_axis_km": 0.02,
+      "inclination_deg": -0.001,
+      "eccentricity": 0.000002,
+      "mean_motion_rev_per_day": -0.00004
+    },
+    "heuristic": {
+      "score": 5,
+      "severity": "low",
+      "calibrated": false
+    },
+    "quality_flags": {
+      "legacy_identity": true
+    },
+    "calibration": null,
+    "catalogue": {
+      "name": "SYNTHETIC EXAMPLE ONLY"
+    },
+    "source_record": {
+      "public_id": "synthetic-residual-001",
+      "database_id": "42",
+      "source": "processor",
+      "created_at": "2026-01-03T08:00:00Z",
+      "revision": 1,
+      "superseded_by": null,
+      "superseded_at": null
+    },
+    "example_note": "Synthetic values, catalogue referent and opaque IDs; no live element data or real object claim."
+  }
+}

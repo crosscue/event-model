@@ -1,0 +1,91 @@
+{
+  "profile": "xq.space:profile-0.1",
+  "registry_version": "0.1.0",
+  "status": "experimental",
+  "namespace_status": "proposed",
+  "publication_status": "draft",
+  "terms": [
+    {
+      "id": "xq.space:orbital",
+      "kind": "modality",
+      "definition": "Orbital element-set evidence and related orbital consistency, identity and cause assessments.",
+      "status": "experimental",
+      "do_not_confuse_with": [
+        "a registered Core xq:space modality",
+        "optical or EVS event types"
+      ]
+    },
+    {
+      "id": "xq.space:assessed",
+      "kind": "action",
+      "definition": "A proposed interpretation was issued as a judgment with evidence and explicit limitations.",
+      "status": "experimental",
+      "allowed_polarities": [
+        0
+      ]
+    },
+    {
+      "id": "xq.space:consistency_residual",
+      "kind": "feature",
+      "definition": "Computed disagreement between element-set predictions evaluated at the later epoch; not a physical-cause determination.",
+      "status": "experimental",
+      "implementation_status": "implemented_source_mapping",
+      "allowed_polarities": [
+        0
+      ],
+      "typical_units": [
+        "km"
+      ]
+    },
+    {
+      "id": "xq.space:identity_hypothesis",
+      "kind": "feature",
+      "definition": "An evidence-backed proposed association of a source-scoped referent with a candidate identity; not identity equivalence.",
+      "status": "experimental",
+      "implementation_status": "provisional",
+      "allowed_polarities": [
+        0
+      ]
+    },
+    {
+      "id": "xq.space:cause_hypothesis",
+      "kind": "feature",
+      "definition": "An evidence-backed proposed explanation of specified evidence, retaining alternatives and limitations; not confirmed causation.",
+      "status": "experimental",
+      "implementation_status": "provisional",
+      "allowed_polarities": [
+        0
+      ]
+    }
+  ],
+  "compositions": [
+    {
+      "id": "xq.space:consistency_residual.observed",
+      "definition": "Computed disagreement between element-set predictions evaluated at the later epoch; not a physical-cause determination.",
+      "feature": "xq.space:consistency_residual",
+      "action": "xq:observed",
+      "required_class": "derived",
+      "required_polarity": 0,
+      "required_unit": "km",
+      "status": "experimental"
+    },
+    {
+      "id": "xq.space:identity_hypothesis.assessed",
+      "definition": "An evidence-backed proposed association of a source-scoped referent with a candidate identity; not identity equivalence.",
+      "feature": "xq.space:identity_hypothesis",
+      "action": "xq.space:assessed",
+      "required_class": "assessment",
+      "required_polarity": 0,
+      "status": "experimental"
+    },
+    {
+      "id": "xq.space:cause_hypothesis.assessed",
+      "definition": "An evidence-backed proposed explanation of specified evidence, retaining alternatives and limitations; not confirmed causation.",
+      "feature": "xq.space:cause_hypothesis",
+      "action": "xq.space:assessed",
+      "required_class": "assessment",
+      "required_polarity": 0,
+      "status": "experimental"
+    }
+  ]
+}

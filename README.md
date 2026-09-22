@@ -76,6 +76,7 @@ See [`SECURITY.md`](SECURITY.md) and [`WHAT-THIS-IS-NOT.md`](WHAT-THIS-IS-NOT.md
 - [`profiles/crosscue-network-0.1.md`](profiles/crosscue-network-0.1.md) — Network Profile 0.1.
 - [`profiles/xq-net-vocabulary.json`](profiles/xq-net-vocabulary.json) — Network-specific vocabulary.
 - [`examples/network-profile-0.1-events.json`](examples/network-profile-0.1-events.json) — synthetic Network Profile examples.
+- [`profiles/crosscue-space-0.1.md`](profiles/crosscue-space-0.1.md) — experimental Space draft; namespace proposed, not officially allocated. Includes the orbital-events CSV mapping, synthetic examples and validation instructions.
 - [`examples/crosscue-core-events.json`](examples/crosscue-core-events.json) — synthetic event examples.
 - [`examples/SEMANTIC-EXAMPLES.md`](examples/SEMANTIC-EXAMPLES.md) — mobility/AdTech, Network, AIS, ADS-B, RF and exploratory imagery mappings.
 - [`MIGRATION.md`](MIGRATION.md) — migration from the exploratory CLI object and earlier draft naming.
